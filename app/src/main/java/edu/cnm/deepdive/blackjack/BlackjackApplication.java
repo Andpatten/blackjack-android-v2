@@ -12,7 +12,9 @@ public class BlackjackApplication extends Application {
     super.onCreate();
     Stetho.initializeWithDefaults(this);
     Picasso.setSingletonInstance(
-        new Picasso.Builder(this).build());
+        new Picasso.Builder(this)
+            .loggingEnabled(true)
+            .build());
     BlackjackDatabase.setApplicationContext(this);
     final BlackjackDatabase database = BlackjackDatabase.getInstance();
     new Thread(new Runnable() {
